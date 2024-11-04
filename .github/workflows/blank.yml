@@ -15,8 +15,10 @@ jobs:
       - name: Install WSL
         uses: Vampire/setup-wsl@v3
       - name: Install nasm
+        shell: wsl-bash
         run: sudo apt-get install nasm
       - name: Install Racket
+        shell: wsl-bash
         uses: Bogdanp/setup-racket@v1.11
         with:
           architecture: 'x64'
