@@ -17,8 +17,13 @@ jobs:
         uses: actions/checkout@main
       - name: Install WSL
         uses: Vampire/setup-wsl@v3
+        with:
+          distribution: Ubuntu-24.04
       - name: Install nasm
-        run: sudo apt-get install nasm
+        run: | 
+          sudo apt update 
+          sudo apt upgrade
+          sudo apt-get install nasm
       - name: Install Racket
         uses: Bogdanp/setup-racket@v1.11
         with:
