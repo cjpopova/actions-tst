@@ -26,12 +26,7 @@ jobs:
       - name: Install nasm
         run: sudo apt-get install nasm
       - name: Install Racket
-        uses: Bogdanp/setup-racket@v1.11
-        with:
-          architecture: 'x64'
-          distribution: 'full'
-          variant: ${{ matrix.racket-variant }}
-          version: ${{ matrix.racket-version }}
+        run: src/install-racket.sh # TODO: pass in configuration
       - name: Version info
         run: |
           nasm --version
