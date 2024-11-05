@@ -36,4 +36,4 @@ jobs:
         run: |
           nasm --version
           gcc --version      
-        # todo verify that Racket installed INSIDE wsl
+          racket --version
