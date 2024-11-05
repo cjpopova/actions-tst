@@ -10,9 +10,9 @@ wget "https://mirror.racket-lang.org/installers/${VERSION}/$INSTALLER"
 chmod u+x ./$INSTALLER
 ./$INSTALLER <<EOF
 no
-1
+4
 
 EOF
 
 # Add Racket to PATH
-echo "/usr/racket/bin" >> "$GITHUB_PATH"
+echo "./racket/bin/" >> "$GITHUB_PATH"
