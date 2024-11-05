@@ -1,0 +1,3 @@
+# Linuxy Shell Script (MUST be lf)
+*.sh                text eol=lf
+
