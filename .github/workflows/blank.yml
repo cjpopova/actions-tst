@@ -22,7 +22,7 @@ jobs:
       - name: Apt update # Necessary before any sudo apt-get steps on WSL
         run: sudo apt update 
       - name: Install GCC
-        run: sudo apt-get install gcc
+        run: sudo apt-get install gcc -y
       - name: Install nasm
         run: sudo apt-get install nasm
       - name: Install Racket
