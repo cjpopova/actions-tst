@@ -15,6 +15,7 @@ no
 EOF
 
 # Add Racket to PATH
-which racket
+WR=$(which racket)
+echo "$WR"
 
 echo "$HOME/racket/bin/" >> "$GITHUB_PATH"
