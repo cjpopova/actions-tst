@@ -28,7 +28,7 @@ jobs:
       - name: Install Racket
         run: bash src/install-racket.sh ${{ matrix.racket-variant }} ${{ matrix.racket-version }} # TODO: pass in configuration
       - name: Add Racket to path
-        run: echo "./racket/bin/" >> $GITHUB_PATH
+        run: echo "./racket/bin/" >> "$GITHUB_PATH"
       - name: Hello world
         run: ./racket/bin/racket src/hello-world.rkt
       - name: Version info
