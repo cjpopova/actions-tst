@@ -29,6 +29,7 @@ jobs:
         run: bash src/install-racket.sh ${{ matrix.racket-variant }} ${{ matrix.racket-version }} # TODO: pass in configuration
       - name: Version info
         run: |
+          which racket
           racket --version
           nasm --version
           gcc --version      
