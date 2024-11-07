@@ -10,6 +10,6 @@ wget "https://mirror.racket-lang.org/installers/${VERSION}/$INSTALLER"
 chmod u+x ./$INSTALLER
 ./$INSTALLER <<EOF
 no
-4
+3
 
 EOF
