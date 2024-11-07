@@ -1,0 +1,22 @@
+on:
+  - push
+
+jobs:
+  build-and-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+        matrix:
+          os: [windows-latest]
+          racket-variant: ['BC'] #, 'CS']
+          racket-version: ['8.6'] #, '8.8', '8.14']
+    defaults:
+      run:
+        shell: wsl-bash {0}
+    name: Clone in wsl
+    steps:
+      - name: Install WSL
+        uses: Vampire/setup-wsl@v3
+        with:
+          distribution: Ubuntu-24.04
+      - name: clone
+        run: git clone git@github.com:cmsc430/langs.git ~/langs

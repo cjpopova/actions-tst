@@ -22,6 +22,8 @@ jobs:
           distribution: Ubuntu-24.04
       - name: Apt update # Necessary before any sudo apt-get steps on WSL
         run: sudo apt update 
+      - name: Install xvfb
+        run: sudo apt-get install xvfb
       - name: Install GCC
         run: sudo apt-get install gcc -y
       - name: Install nasm
