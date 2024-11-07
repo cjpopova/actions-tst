@@ -1,7 +1,7 @@
 #lang racket
 (provide D-concrete D 𝑫 𝑫-𝒑𝒓𝒊𝒎 is-true is-false)
 (require redex/reduction-semantics
-         (only-in "../con/semantics.rkt" C C-concrete))
+         (only-in "../conditionals/semantics.rkt" C C-concrete))
 
 (define-extended-language D-concrete C-concrete
   (e ::= .... boolean (if e e e) (zero? e)))
