@@ -27,7 +27,7 @@ jobs:
       - name: Install nasm
         run: sudo apt-get install nasm
       - name: Install Racket
-        run: bash src/wsl-install-rkt.sh ${{ matrix.racket-variant }} ${{ matrix.racket-version }}
+        run: bash .github/workflows/wsl-install-rkt.sh ${{ matrix.racket-variant }} ${{ matrix.racket-version }}
       - name: Version info
         run: |
           ./racket/bin/racket --version
