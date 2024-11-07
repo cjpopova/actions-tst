@@ -35,7 +35,7 @@ jobs:
           gcc --version      
       - name: Install langs package
         run: |
-          raco pkg install --auto ../actions-tst/ # TODO: test in my repo
+          ./racket/bin/raco pkg install --auto ../actions-tst/ # TODO: test in my repo
       - name: Run tests
         run: |
           xvfb-run raco test -p langs
