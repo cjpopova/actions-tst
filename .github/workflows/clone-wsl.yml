@@ -14,12 +14,12 @@ jobs:
         shell: wsl-bash {0}
     name: Clone in wsl
     steps:
-      - name: Fool git
-        run: git config --global core.protectNTFS false
       - name: Install WSL
         uses: Vampire/setup-wsl@v3
         with:
           distribution: Ubuntu-24.04
+      - name: Fool git
+        run: git config --global core.protectNTFS false  
       - name: Checkout
         uses: actions/checkout@main
 
