@@ -18,10 +18,11 @@ jobs:
         uses: Vampire/setup-wsl@v3
         with:
           distribution: Ubuntu-24.04
-      - name: Check out the repository
-        uses: Ubuntu/WSL/.github/actions/wsl-checkout@main
-        with:
-          distro: Ubuntu-24.04
-          working-dir: /tmp/github/
-          submodules: true
-        # try: https://github.com/ubuntu/WSL/blob/main/.github/workflows/wsl-example.yaml
+      - name: Copy the github repo
+        run: |
+          echo "$GITHUB_REPOSITORY"
+          cp -r ${{ github.repository }} ~/langs/
+
+        # https://github.com/ubuntu/WSL/blob/main/.github/workflows/wsl-example.yaml
+        # https://github.com/ubuntu/WSL/blob/main/docs/reference/actions.md
+        # alternative: try to install the pkg from OR move the repo from {{ github.repository }} to WSL
