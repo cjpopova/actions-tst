@@ -18,11 +18,17 @@ jobs:
         uses: Vampire/setup-wsl@v3
         with:
           distribution: Ubuntu-24.04
+      # https://github.com/desktop/desktop/issues/17149
+      # https://github.com/actions/checkout/discussions/976
       - name: Fool git
         shell: pwsh # This is the only run command that runs directly on windows powershell
-        run: git config --global core.protectNTFS false  
+        run: |
+          git config --global core.protectNTFS false  
+      - name: Fool git in bash too
+        run: |
+          git config --global core.protectNTFS false  
       - name: Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@v2
 
 
         # https://github.com/ubuntu/WSL/blob/main/.github/workflows/wsl-example.yaml
